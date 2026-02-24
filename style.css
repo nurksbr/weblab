@@ -77,11 +77,22 @@ figure {
     margin: 1.5rem 0;
 }
 
+.profile-figure {
+    max-width: 320px;
+    margin: 2rem auto;
+}
+
+.profile-figure img {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
 figcaption {
     font-style: italic;
     color: #555555;
     margin-top: 0.5rem;
     font-size: 0.95rem;
+    text-align: center;
 }
 
 /* General Interactive Elements */
