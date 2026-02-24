@@ -1,5 +1,7 @@
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,7 +10,8 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    color: #222222; /* High contrast dark gray */
+    color: #222222;
+    /* High contrast dark gray */
     background-color: #ffffff;
     padding: 0 1.5rem;
     max-width: 800px;
@@ -36,7 +39,10 @@ body {
 }
 
 /* Readability and Typography */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     color: #111111;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -49,7 +55,9 @@ h1 {
     padding-bottom: 0.5rem;
 }
 
-p, ul, address {
+p,
+ul,
+address {
     margin-bottom: 1rem;
 }
 
@@ -61,7 +69,8 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px; /* Slight polish */
+    border-radius: 8px;
+    /* Slight polish */
 }
 
 figure {
@@ -89,7 +98,8 @@ a:hover {
 
 /* Form Styles */
 fieldset {
-    border: 2px solid #767676; /* Accessible border color */
+    border: 2px solid #767676;
+    /* Accessible border color */
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 8px;
@@ -112,7 +122,9 @@ label {
     color: #333333;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     width: 100%;
     padding: 0.75rem;
     border: 2px solid #767676;
@@ -145,18 +157,18 @@ button:hover {
 }
 
 /* Accessible Focus States */
-a:focus, 
-button:focus, 
-input:focus, 
-select:focus, 
+a:focus,
+button:focus,
+input:focus,
+select:focus,
 textarea:focus {
     /* VERY clear outline as requested */
     outline: 3px solid #0056b3;
     outline-offset: 3px;
 }
 
-input:focus, 
-select:focus, 
+input:focus,
+select:focus,
 textarea:focus {
     border-color: #0056b3;
 }
@@ -164,9 +176,16 @@ textarea:focus {
 /* Error Messages - Accessible Red */
 small[role="alert"] {
     display: block;
-    color: #d32f2f; /* WCAG compliant red */
+    color: #d32f2f;
+    /* WCAG compliant red */
     font-weight: bold;
     margin-top: 0.4rem;
     font-size: 0.9rem;
-    min-height: 1.2rem; /* Reserve space even when empty */
+    min-height: 1.2rem;
+    /* Reserve space even when empty */
+}
+
+/* Prevent outline on main explicitly focused using keyboard skip link */
+main:focus {
+    outline: none;
 }
