@@ -1,0 +1,172 @@
+/* Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: #222222; /* High contrast dark gray */
+    background-color: #ffffff;
+    padding: 0 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Skip link (Accessibility) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 1rem;
+    z-index: 100;
+    text-decoration: none;
+    font-weight: bold;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid #000000;
+    outline-offset: 2px;
+}
+
+/* Readability and Typography */
+h1, h2, h3, h4 {
+    color: #111111;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 0.5rem;
+}
+
+p, ul, address {
+    margin-bottom: 1rem;
+}
+
+ul {
+    padding-left: 2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Slight polish */
+}
+
+figure {
+    margin: 1.5rem 0;
+}
+
+figcaption {
+    font-style: italic;
+    color: #555555;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* General Interactive Elements */
+a {
+    color: #0056b3;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+a:hover {
+    color: #003d82;
+    text-decoration: none;
+}
+
+/* Form Styles */
+fieldset {
+    border: 2px solid #767676; /* Accessible border color */
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+}
+
+form p {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #767676;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #222222;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    background-color: #0056b3;
+    color: #ffffff;
+    border: 2px solid transparent;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #003d82;
+}
+
+/* Accessible Focus States */
+a:focus, 
+button:focus, 
+input:focus, 
+select:focus, 
+textarea:focus {
+    /* VERY clear outline as requested */
+    outline: 3px solid #0056b3;
+    outline-offset: 3px;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+    border-color: #0056b3;
+}
+
+/* Error Messages - Accessible Red */
+small[role="alert"] {
+    display: block;
+    color: #d32f2f; /* WCAG compliant red */
+    font-weight: bold;
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+    min-height: 1.2rem; /* Reserve space even when empty */
+}
