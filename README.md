@@ -11,7 +11,7 @@ Bu proje, karanlık tema, yüksek erişilebilirlik standartları, semantik HTML5
 ## 🏆 Lighthouse Skoru - Erişilebilirlik Kanıtı
 Web erişilebilirliği testlerinden tam yetki (100) alarak onaylanmıştır.
 
-![Uploading Ekran Resmi 2026-02-25 08.56.21.png…]()
+![Lighthouse Erişilebilirlik Skoru (100 üzerinden 100) Kanıt Ekran Görüntüsü](lighthouse.png)
 
 ## 💻 Kullanılan Teknolojiler
 - HTML5
