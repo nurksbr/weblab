@@ -7,15 +7,16 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-family-base);
+    font-size: var(--text-base);
     line-height: 1.6;
-    color: #222222;
-    /* High contrast dark gray */
-    background-color: #ffffff;
-    padding: 0 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
+    color: var(--color-text-base);
+    background-color: var(--color-surface-base);
 }
 
 /* Skip link (Accessibility) */
@@ -38,21 +39,108 @@ body {
     outline-offset: 2px;
 }
 
+/* Section 'lar arasi bosluk */
+section {
+    padding: var(--spacing-10) var(--spacing-4);
+}
+
+/* Section basliklari */
+section h2 {
+    font-size: var(--text-2xl);
+    color: var(--color-primary-600);
+    margin-bottom: var(--spacing-6);
+    text-align: center;
+}
+
 /* Readability and Typography */
 h1,
-h2,
 h3,
 h4 {
-    color: #111111;
+    color: var(--color-text-base);
     margin-top: 2rem;
     margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 h1 {
-    font-size: 2.5rem;
-    border-bottom: 2px solid #eeeeee;
+    font-size: var(--text-3xl);
+    border-bottom: 2px solid var(--color-surface-muted);
     padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: var(--text-xl);
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--spacing-3) var(--spacing-6);
+    background-color: var(--color-surface-base);
+    border-bottom: 1px solid var(--color-surface-muted);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Logo / Site adi */
+header h1 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary-600);
+    border-bottom: none;
+    /* Resetting previous h1 styles for the header */
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* ===== NAV LISTESI ===== */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: var(--spacing-2);
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: var(--spacing-1) var(--spacing-3);
+    color: var(--color-text-base);
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--color-primary-600);
+    color: var(--color-text-inverse);
+}
+
+/* ===== MOBILDE DIKEY YIGIN ===== */
+@media (max-width: 639px) {
+    header {
+        flex-direction: column;
+        gap: var(--spacing-2);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
 }
 
 p,
@@ -65,6 +153,23 @@ ul {
     padding-left: 2rem;
 }
 
+/* ===== BECERİ ETİKETLERİ (Toolbar) ===== */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    list-style: none;
+    padding: 0;
+}
+
+.skill-tags li {
+    background-color: var(--color-primary-600);
+    color: var(--color-surface-base);
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -73,31 +178,89 @@ img {
     /* Slight polish */
 }
 
-figure {
-    margin: 1.5rem 0;
+/* Hakkimda : tek sutun , ortalanmis */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-6);
+    text-align: center;
 }
 
-.profile-figure {
-    width: 120px;
-    height: 120px;
-    margin: 1.5rem auto;
+.about-content figure {
+    max-width: 200px;
 }
 
-.profile-figure img {
+.about-content img {
     width: 100%;
-    height: 100%;
+    border-radius: var(--radius-full);
+    aspect-ratio: 1;
     object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    border: 3px solid #eeeeee;
+    box-shadow: var(--shadow-md);
+    border: 3px solid var(--color-surface-muted);
 }
 
 figcaption {
     font-style: italic;
-    color: #555555;
-    margin-top: 0.5rem;
-    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-2);
+    font-size: var(--text-sm);
     text-align: center;
+}
+
+/* ===== PROJE GRID ===== */
+.project-grid {
+    display: grid;
+    /* Sihirli satir : otomatik responsive grid ! */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-8);
+}
+
+/* ===== PROJE KARTI ===== */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface-elevated);
+    border: 1px solid var(--color-surface-muted);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Kart icindeki gorsel */
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Kart icerigi */
+.project-card h3,
+.project-card p,
+.project-card .skill-tags {
+    padding: 0 var(--spacing-6);
+}
+
+.project-card h3 {
+    margin-top: var(--spacing-4);
+    font-size: var(--text-lg);
+}
+
+.project-card p {
+    color: var(--color-text-muted);
+    flex-grow: 1;
+    /* icerik farkli uzunlukta olsa bile kartlarin alt kenari hizali */
+}
+
+.project-card .skill-tags {
+    padding-bottom: var(--spacing-6);
+    margin-top: auto;
 }
 
 /* General Interactive Elements */
@@ -112,96 +275,152 @@ a:hover {
     text-decoration: none;
 }
 
-/* Form Styles */
+/* Iletisim Formu */
 fieldset {
-    border: 2px solid #767676;
-    /* Accessible border color */
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    border: 2px solid var(--color-surface-muted);
+    padding: var(--spacing-6);
+    margin-bottom: var(--spacing-8);
+    border-radius: var(--radius-lg);
 }
 
 legend {
     font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0 0.5rem;
+    font-size: var(--text-lg);
+    padding: 0 var(--spacing-2);
+    color: var(--color-primary-600);
 }
 
-form p {
-    margin-bottom: 1.5rem;
+.form-group {
+    margin-bottom: var(--spacing-4);
 }
 
-label {
+.form-group label {
     display: block;
+    margin-bottom: var(--spacing-1);
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #333333;
 }
 
-input,
-select,
-textarea {
+.form-group input,
+.form-group textarea,
+.form-group select {
     width: 100%;
-    padding: 0.75rem;
-    border: 2px solid #767676;
-    border-radius: 4px;
+    padding: var(--spacing-2) var(--spacing-4);
+    border: 1px solid var(--color-surface-muted);
+    border-radius: var(--radius-md);
     font-family: inherit;
-    font-size: 1rem;
-    background-color: #ffffff;
-    color: #222222;
+    font-size: var(--text-base);
+    background-color: var(--color-surface-base);
+    color: var(--color-text-base);
+    transition: border-color var(--transition-fast);
 }
 
-textarea {
+.form-group textarea {
     resize: vertical;
     min-height: 120px;
 }
 
-button {
-    background-color: #0056b3;
-    color: #ffffff;
-    border: 2px solid transparent;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: inherit;
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--color-primary-600);
+    outline: 2px solid var(--color-primary-100);
+    outline-offset: 2px;
 }
 
-button:hover {
-    background-color: #003d82;
+.form-group button[type="submit"] {
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-6);
+    background: var(--color-primary-600);
+    color: var(--color-surface-base);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: var(--text-base);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+
+.form-group button[type="submit"]:hover,
+.form-group button[type="submit"]:focus {
+    background: var(--color-primary-900);
 }
 
 /* Accessible Focus States */
 a:focus,
-button:focus,
-input:focus,
-select:focus,
-textarea:focus {
-    /* VERY clear outline as requested */
-    outline: 3px solid #0056b3;
+.form-group button:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 3px solid var(--color-primary-500);
     outline-offset: 3px;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #0056b3;
 }
 
 /* Error Messages - Accessible Red */
 small[role="alert"] {
     display: block;
     color: #d32f2f;
-    /* WCAG compliant red */
     font-weight: bold;
     margin-top: 0.4rem;
     font-size: 0.9rem;
     min-height: 1.2rem;
-    /* Reserve space even when empty */
 }
 
-/* Prevent outline on main explicitly focused using keyboard skip link */
 main:focus {
     outline: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing-10) var(--spacing-4);
+    background: var(--color-surface-elevated);
+    border-top: 1px solid var(--color-surface-muted);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+}
+
+/* ========================================
+TABLET (640 px ve uzeri )
+======================================== */
+@media (min-width: 640px) {
+    section {
+        padding: var(--spacing-12) var(--spacing-10);
+    }
+
+    /* Hakkimda : yatay duzen */
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .about-content figure {
+        flex-shrink: 0;
+    }
+
+    /* Form butonu tam genislik olmaktan cikar */
+    .form-group button[type="submit"] {
+        width: auto;
+    }
+}
+
+/* ========================================
+MASAUSTU (1024 px ve uzeri )
+======================================== */
+@media (min-width: 1024px) {
+
+    /* Icerik genisligi sinirla */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    section {
+        padding: var(--spacing-12) var(--spacing-10);
+    }
+
+    /* Proje kartlari en az 3 sutun */
+    .project-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
