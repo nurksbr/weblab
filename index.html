@@ -11,145 +11,354 @@
     <link rel="stylesheet" href="style.css?v=2">
 </head>
 
-<body>
-    <a href="#main-content" class="skip-link">Ana içeriğe atla</a>
+<body class="transition-colors duration-300 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Tema Değiştirme Butonu -->
+    <button onclick="document.documentElement.classList.toggle('dark')"
+        class="fixed top-4 right-4 z-50 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-3 rounded-full shadow-lg hover:scale-110 transition-transform"
+        aria-label="Tema degistir">
+        <!-- Acik temada ay, karanlik temada gunes -->
+        <span class="dark:hidden text-xl">&#9790;</span>
+        <span class="hidden dark:inline text-xl">&#9728;</span>
+    </button>
+    <!-- TAILWIND UYGULAMA-3 KARTI BAŞLANGICI -->
+    <div
+        class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300 flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 transition-colors duration-300 rounded-xl shadow-lg max-w-sm w-full p-6">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Tailwind Test</h1>
+            <p class="text-gray-600 dark:text-gray-300 mb-4">
+                Bu benim ilk Tailwind CSS bileşenim. Her class tek bir iş yapar.
+            </p>
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                Devam Et
+            </button>
+        </div>
+    </div>
+    <!-- TAILWIND KARTI SONU -->
 
-    <header>
-        <h1>Benim Portfolyom</h1>
-        <nav aria-label="Ana Menü">
-            <ul>
-                <li><a href="#hakkimda">Hakkımda</a></li>
-                <li><a href="#projelerim">Projelerim</a></li>
-                <li><a href="#iletisim">İletişim</a></li>
-            </ul>
-        </nav>
+    <a href="#main-content" class="skip-link">Ana icerige atla</a>
+
+    <header class="sticky top-0 z-40 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <h1 class="text-xl font-bold text-blue-800 dark:text-blue-300">
+                Ahmet Yilmaz
+            </h1>
+            <nav aria-label="Ana navigasyon">
+                <ul class="flex flex-wrap gap-2">
+                    <li><a href="#hakkimda"
+                            class="px-3 py-1 rounded-md text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">Hakkimda</a>
+                    </li>
+                    <li><a href="#projeler"
+                            class="px-3 py-1 rounded-md text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">Projeler</a>
+                    </li>
+                    <li><a href="#iletisim"
+                            class="px-3 py-1 rounded-md text-gray-700 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-gray-800 transition-colors">Iletisim</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content" tabindex="-1">
-        <section id="hakkimda">
-            <h2>Hakkımda</h2>
-            <article class="about-content">
-                <h3>Kısaca Ben</h3>
-
-                <figure class="profile-figure">
-                    <img src="profile.jpeg"
-                        alt="Fevziye Nur Kesebir'in bilgisayar başında çalışırken çekilmiş portresi">
-                    <figcaption>Çalışma anımdan bir kare</figcaption>
+        <section id="hakkimda" class="py-16 px-4">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8">
+                <figure class="shrink-0">
+                    <img src="profile.jpeg" alt="Ahmet Yilmaz vesikalik fotografi"
+                        class="w-40 h-40 rounded-full object-cover shadow-lg" />
                 </figure>
-
-                <p>Merhaba, ben bir web geliştiricisiyim. Temiz, erişilebilir ve modern web standartlarına uygun
-                    projeler inşa etmekten büyük keyif alıyorum. Amacım sürekli olarak kendimi geliştirmek ve değer
-                    katan ürünler ortaya çıkarmak.</p>
-
-                <h4>Kullandığım Teknolojiler:</h4>
-                <ul class="skill-tags" role="list" aria-label="Beceri etiketleri">
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Git</li>
-                </ul>
-            </article>
-        </section>
-
-        <section id="projelerim">
-            <h2>Projelerim</h2>
-            <div class="project-grid">
-                <article class="project-card">
-                    <img src="sensor-project.png"
-                        alt="Karanlık temalı, sıcaklık ve gaz gibi değerlerin ölçüldüğü IoT akıllı ev sensör yönetim arayüzü" />
-                    <h3>Akıllı Ev Sensör Yönetim Paneli</h3>
-                    <p>Sisteme yeni cihaz ve sensörler (sıcaklık, nem, gaz ve alev tespiti) ekleyip yapılandırmaya
-                        yarayan, verilerin mobil uygulamadan anlık takip dilebildiği, modern karanlık temalı IoT yönetim
-                        kontrol paneli.</p>
-                    <ul class="skill-tags">
-                        <li>React & Next.js</li>
-                        <li>Tailwind CSS</li>
-                        <li>IoT</li>
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left">
+                        Hakkimda
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">
+                        Frontend gelistirici olarak modern web teknolojileriyle kullanici dostu arayuzler olusturuyorum.
+                    </p>
+                    <ul class="flex flex-wrap gap-2">
+                        <li class="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">React</li>
+                        <li class="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">TypeScript</li>
+                        <li class="bg-blue-800 text-white px-3 py-1 rounded-full text-sm">Tailwind</li>
                     </ul>
-                </article>
-                <article class="project-card">
-                    <img src="proje1.jpg" alt="E-Ticaret sitesi anasayfa ekran goruntusu" />
-                    <h3>E-Ticaret Sitesi</h3>
-                    <p>React ve Node.js ile geliştirilmiş tam kapsamlı bir e-ticaret uygulaması.</p>
-                    <ul class="skill-tags">
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>MongoDB</li>
-                    </ul>
-                </article>
-                <article class="project-card">
-                    <img src="proje2.jpg" alt="Blog uygulamasi yazi listesi gorunumu" />
-                    <h3>Blog Uygulaması</h3>
-                    <p>Kişisel blog platformu. Markdown destekli yazı editörü.</p>
-                    <ul class="skill-tags">
-                        <li>TypeScript</li>
-                        <li>Next.js</li>
-                    </ul>
-                </article>
-                <article class="project-card">
-                    <img src="proje3.jpg" alt="Hava durumu uygulamasi arayuzu" />
-                    <h3>Hava Durumu</h3>
-                    <p>OpenWeather API ile anlık hava durumu bilgisi.</p>
-                    <ul class="skill-tags">
-                        <li>JavaScript</li>
-                        <li>API</li>
-                    </ul>
-                </article>
+                </div>
             </div>
         </section>
 
-        <section id="iletisim">
-            <h2>İletişim</h2>
-            <form method="POST" novalidate>
-                <fieldset>
-                    <legend>Bize Ulaşın</legend>
+        <section id="projeler" class="py-16 px-4 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-10">
+                    Projelerim
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Proje 1 (Elevated Card) -->
+                    <article
+                        class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg rounded-xl overflow-hidden transition-shadow flex flex-col">
+                        <img src="proje1.jpg" alt="E-Ticaret anasayfa gorunumu" class="w-full h-48 object-cover" />
+                        <div class="p-5 flex-grow">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">E-Ticaret</h3>
+                            <div class="text-gray-600 dark:text-gray-400">
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">React ve Node.js ile tam
+                                    kapsamli uygulama.</p>
+                            </div>
+                        </div>
+                    </article>
 
-                    <p class="form-group">
-                        <label for="name">İsim Soyisim:</label>
-                        <input type="text" id="name" name="name" required minlength="2" aria-describedby="name-error">
-                        <small id="name-error" role="alert"></small>
-                    </p>
+                    <!-- Proje 2 -->
+                    <article
+                        class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg rounded-xl overflow-hidden transition-shadow flex flex-col">
+                        <img src="proje2.jpg" alt="Blog uygulamasi gorunumu" class="w-full h-48 object-cover" />
+                        <div class="p-5 flex-grow">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Blog Uygulamasi</h3>
+                            <div class="text-gray-600 dark:text-gray-400">
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">Kisisel blog platformu.
+                                    Markdown destekli yazi editoru.</p>
+                            </div>
+                        </div>
+                    </article>
 
-                    <p class="form-group">
-                        <label for="email">E-posta Adresi:</label>
-                        <input type="email" id="email" name="email" required aria-describedby="email-error">
-                        <small id="email-error" role="alert"></small>
-                    </p>
+                    <!-- Proje 3 -->
+                    <article
+                        class="bg-white dark:bg-gray-800 shadow-md hover:shadow-lg rounded-xl overflow-hidden transition-shadow flex flex-col">
+                        <img src="proje3.jpg" alt="Hava durumu uygulamasi arayuzu" class="w-full h-48 object-cover" />
+                        <div class="p-5 flex-grow">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Hava Durumu</h3>
+                            <div class="text-gray-600 dark:text-gray-400">
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">OpenWeather API ile anlik hava
+                                    durumu bilgisi.</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                    <p class="form-group">
-                        <label for="subject">Konu:</label>
-                        <select id="subject" name="subject" required aria-describedby="subject-error">
-                            <option value="">Lütfen bir konu seçin</option>
-                            <option value="is_birligi">İş Birliği</option>
-                            <option value="proje_teklifi">Proje Teklifi</option>
-                            <option value="diger">Diğer</option>
-                        </select>
-                        <small id="subject-error" role="alert"></small>
-                    </p>
+        <!-- UYGULAMA-6: UI KIT (HTML Versiyonu) -->
+        <section id="ui-kit" class="px-4 py-12 max-w-6xl mx-auto dark:bg-gray-900 transition-colors duration-300">
+            <h2 class="text-3xl font-bold mb-8 dark:text-white border-b pb-2">
+                UI Kit: Button Bileşeni
+            </h2>
 
-                    <p class="form-group">
-                        <label for="message">Mesajınız:</label>
-                        <textarea id="message" name="message" required minlength="10"
-                            aria-describedby="message-error"></textarea>
-                        <small id="message-error" role="alert"></small>
-                    </p>
+            <!-- Boyutvaryantlari -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3 dark:text-gray-200">Boyut Varyantları</h3>
+                <div class="flex flex-wrap items-end gap-4">
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700">Küçük</button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-4 py-2 text-base bg-blue-600 text-white hover:bg-blue-700">Orta</button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-6 py-3 text-lg bg-blue-600 text-white hover:bg-blue-700">Büyük</button>
+                </div>
+            </div>
 
-                    <p class="form-group">
-                        <button type="submit">Gönder</button>
-                    </p>
-                </fieldset>
-            </form>
+            <!-- Renk varyantlari -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3 dark:text-gray-200">Renk Varyantları</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-4 py-2 text-base bg-blue-600 text-white hover:bg-blue-700">Primary</button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 px-4 py-2 text-base bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:hover:bg-gray-600">Secondary</button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 px-4 py-2 text-base bg-red-600 text-white hover:bg-red-700">Danger</button>
+                    <button
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 px-4 py-2 text-base bg-transparent text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800">Ghost</button>
+                </div>
+            </div>
 
-            <address>
-                <p>E-posta: <a href="mailto:ornek@email.com">ornek@email.com</a></p>
-            </address>
+            <!-- Disabled durumu -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-3 dark:text-gray-200">Durum</h3>
+                <div class="flex flex-wrap gap-4">
+                    <button disabled
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none px-4 py-2 text-base bg-blue-600 text-white opacity-50 cursor-not-allowed">Disabled</button>
+                </div>
+            </div>
+
+            <!-- Input Başlığı -->
+            <h2 class="text-3xl font-bold mb-8 mt-12 dark:text-white border-b pb-2">
+                UI Kit: Input Bileşeni
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Varyant 1: Standart -->
+                <div class="space-y-1">
+                    <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ad
+                        Soyad</label>
+                    <input id="name" type="text" placeholder="Ahmet Yilmaz"
+                        class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-gray-100 border-gray-300 focus:ring-blue-500 bg-white dark:bg-gray-800" />
+                </div>
+
+                <!-- Varyant 2: HelpText & Email -->
+                <div class="space-y-1">
+                    <label for="email"
+                        class="block text-sm font-medium text-gray-700 dark:text-gray-300">E-posta</label>
+                    <input id="email" type="email"
+                        class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-gray-100 border-gray-300 focus:ring-blue-500 bg-white dark:bg-gray-800"
+                        aria-describedby="email-help" />
+                    <p id="email-help" class="text-sm text-gray-500 dark:text-gray-400">Ornek: ad@mail.com</p>
+                </div>
+
+                <!-- Varyant 3: Error & Password -->
+                <div class="space-y-1">
+                    <label for="pass" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sifre</label>
+                    <input id="pass" type="password"
+                        class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-gray-100 border-red-500 focus:ring-red-500 bg-white dark:bg-gray-800"
+                        aria-describedby="pass-error" />
+                    <p id="pass-error" role="alert" class="text-sm text-red-600 dark:text-red-400">En az 8 karakter
+                        olmali</p>
+                </div>
+
+                <!-- Varyant 4: Disabled -->
+                <div class="space-y-1">
+                    <label for="disabled" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Devre
+                        Disi</label>
+                    <input id="disabled" type="text" disabled value="Duzenlenemez"
+                        class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-gray-100 border-gray-300 focus:ring-blue-500 bg-gray-100 cursor-not-allowed" />
+                </div>
+            </div>
+
+            <!-- Card Başlığı -->
+            <h2 class="text-3xl font-bold mb-8 mt-12 dark:text-white border-b pb-2">
+                UI Kit: Card Bileşeni
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Varyant 1: Elevated -->
+                <div
+                    class="rounded-xl overflow-hidden transition-shadow flex flex-col bg-white dark:bg-gray-800 shadow-md hover:shadow-lg">
+                    <img src="proje1.jpg" alt="Proje ekran goruntusu" class="w-full h-48 object-cover" />
+                    <div class="p-5 flex-grow">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Proje A</h3>
+                        <div class="text-gray-600 dark:text-gray-400">
+                            <p>Bu bir elevated (gölgeli) kart.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Varyant 2: Outlined -->
+                <div
+                    class="rounded-xl overflow-hidden transition-shadow flex flex-col bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                    <div class="p-5 flex-grow">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Proje B</h3>
+                        <div class="text-gray-600 dark:text-gray-400">
+                            <p>Bu bir outlined (çerçeveli) kart.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Varyant 3: Filled -->
+                <div class="rounded-xl overflow-hidden transition-shadow flex flex-col bg-gray-100 dark:bg-gray-800">
+                    <div class="p-5 flex-grow">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Proje C</h3>
+                        <div class="text-gray-600 dark:text-gray-400">
+                            <p>Bu bir filled (dolgulu) kart.</p>
+                        </div>
+                    </div>
+                    <!-- Footer -->
+                    <div
+                        class="px-5 py-3 bg-gray-50 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-700 flex justify-end">
+                        <button
+                            class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-3 py-1.5 text-sm bg-blue-600 text-white hover:bg-blue-700">Detay</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert Başlığı -->
+            <h2 class="text-3xl font-bold mb-8 mt-12 dark:text-white border-b pb-2">
+                UI Kit: Alert Bileşeni
+            </h2>
+
+            <div class="flex flex-col gap-4">
+                <!-- Varyant 1: Info -->
+                <div role="alert"
+                    class="border-l-4 rounded-r-lg p-4 bg-blue-50 border-blue-500 text-blue-800 dark:bg-blue-950 dark:text-blue-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-semibold mb-1">Bilgi</p>
+                            <p class="text-sm">Formunuz basariyla kaydedildi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Varyant 2: Success -->
+                <div role="alert"
+                    class="border-l-4 rounded-r-lg p-4 bg-green-50 border-green-500 text-green-800 dark:bg-green-950 dark:text-green-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-semibold mb-1">Basarili</p>
+                            <p class="text-sm">Islem tamamlandi!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Varyant 3: Warning -->
+                <div role="alert"
+                    class="border-l-4 rounded-r-lg p-4 bg-amber-50 border-amber-500 text-amber-800 dark:bg-amber-950 dark:text-amber-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-semibold mb-1">Uyari</p>
+                            <p class="text-sm">Oturum 5 dakika sonra sona erecek.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Varyant 4: Error (Kapatılabilir) -->
+                <div role="alert"
+                    class="border-l-4 rounded-r-lg p-4 bg-red-50 border-red-500 text-red-800 dark:bg-red-950 dark:text-red-200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-semibold mb-1">Hata</p>
+                            <p class="text-sm">Bilinmeyen bir hata olustu.</p>
+                        </div>
+                        <button class="ml-4 opacity-60 hover:opacity-100" aria-label="Kapat">
+                            &#10005;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim" class="py-16 px-4">
+            <div class="max-w-lg mx-auto">
+                <h2 class="text-3xl font-bold text-center text-gray-900 dark:text-white mb-8">
+                    Iletisim
+                </h2>
+                <form class="space-y-4">
+                    <!-- Input: Ad Soyad -->
+                    <div class="space-y-1">
+                        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Ad
+                            Soyad</label>
+                        <input id="name" type="text" required
+                            class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:text-gray-100" />
+                    </div>
+
+                    <!-- Input: E-posta -->
+                    <div class="space-y-1">
+                        <label for="email"
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300">E-posta</label>
+                        <input id="email" type="email" required
+                            class="w-full px-3 py-2 rounded-lg border transition-colors focus:outline-none focus:ring-2 border-gray-300 focus:ring-blue-500 bg-white dark:bg-gray-800 dark:text-gray-100" />
+                    </div>
+
+                    <!-- Textarea: Mesajiniz -->
+                    <div class="space-y-1">
+                        <label for="message"
+                            class="block text-sm font-medium text-gray-700 dark:text-gray-300">Mesajiniz</label>
+                        <textarea id="message" rows="5" required
+                            class="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none dark:bg-gray-800 dark:text-gray-100 dark:border-gray-600"></textarea>
+                    </div>
+
+                    <!-- Button: Gonder -->
+                    <button type="submit"
+                        class="inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 px-6 py-3 text-lg bg-blue-600 text-white hover:bg-blue-700">
+                        Gonder
+                    </button>
+                </form>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Tüm hakları saklıdır.</p>
+    <footer
+        class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center py-6 px-4 text-gray-500 dark:text-gray-400 text-sm">
+        <p>&copy; 2026 Ahmet Yilmaz. Tum haklari saklidir.</p>
     </footer>
 </body>
 

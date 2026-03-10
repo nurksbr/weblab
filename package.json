@@ -1,0 +1,27 @@
+{
+  "name": "web-lab",
+  "version": "1.0.0",
+  "description": "Bu proje, karanlık tema, yüksek erişilebilirlik standartları, semantik HTML5 ve modern web teknolojileri (HTML, CSS) kullanılarak tasarlanmış tamamen duyarlı (responsive) bir kişisel portfolyo sayfasıdır.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nurksbr/weblab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nurksbr/weblab/issues"
+  },
+  "homepage": "https://github.com/nurksbr/weblab#readme",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  }
+}
